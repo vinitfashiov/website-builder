@@ -236,7 +236,7 @@ export default function LandingPage() {
             Build Your Dream Website
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-            Professional websites starting at just <span className="text-green-600 font-bold">₹99</span> advance booking.
+            Professional websites starting at just <span className="text-green-600 font-bold">₹9</span> advance booking.
             <br className="hidden sm:block" />
             No hidden charges. Fast delivery. 100% satisfaction guaranteed.
           </p>
@@ -528,7 +528,7 @@ export default function LandingPage() {
                 ) : (
                   <span className="flex items-center justify-center gap-2">
                     <Shield className="w-5 h-5" />
-                    Secure Payment: Pay ₹99 & Book Now
+                    Secure Payment: Pay ₹9 to book your website slot
                   </span>
                 )}
               </Button>
