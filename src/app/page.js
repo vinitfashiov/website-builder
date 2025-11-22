@@ -14,7 +14,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { useAuth } from './providers';
 import { api } from '@/lib/http';
 
-const RAZORPAY_KEY_ID = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID ?? 'rzp_test_KKalFqBEMmmbnB';
+const RAZORPAY_KEY_ID = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID ?? 'rzp_live_RJ1EJE3OdqE2Bd';
 
 const categories = [
   'Fashion',
