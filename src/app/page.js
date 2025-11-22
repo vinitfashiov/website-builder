@@ -264,75 +264,91 @@ export default function LandingPage() {
 
         <Card className="p-6 sm:p-8 shadow-xl max-w-4xl mx-auto">
           {step === 1 && (
-            <div data-testid="step-1">
-              <div className="mb-6">
-                <h2 className="text-2xl font-bold mb-2">Let&apos;s Get Started</h2>
-                <p className="text-gray-600 text-sm">Tell us about yourself</p>
-              </div>
-              <div className="space-y-5">
-                <div>
-                  <Label htmlFor="name" className="text-sm font-semibold">
-                    Full Name *
-                  </Label>
-                  <Input
-                    id="name"
-                    data-testid="input-name"
-                    value={formData.name}
-                    onChange={(e) => handleChange('name', e.target.value)}
-                    placeholder="John Doe"
-                    className="mt-1.5 h-11"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="phone" className="text-sm font-semibold">
-                    Phone Number *
-                  </Label>
-                  <Input
-                    id="phone"
-                    data-testid="input-phone"
-                    value={formData.phone}
-                    onChange={(e) => handleChange('phone', e.target.value)}
-                    placeholder="9876543210"
-                    type="tel"
-                    className="mt-1.5 h-11"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="password" className="text-sm font-semibold">
-                    Create Password *
-                  </Label>
-                  <Input
-                    id="password"
-                    data-testid="input-password"
-                    value={formData.password}
-                    onChange={(e) => handleChange('password', e.target.value)}
-                    placeholder="Minimum 6 characters"
-                    type="password"
-                    className="mt-1.5 h-11"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="confirmPassword" className="text-sm font-semibold">
-                    Confirm Password *
-                  </Label>
-                  <Input
-                    id="confirmPassword"
-                    data-testid="input-confirm-password"
-                    value={formData.confirmPassword}
-                    onChange={(e) => handleChange('confirmPassword', e.target.value)}
-                    placeholder="Re-enter your password"
-                    type="password"
-                    className="mt-1.5 h-11"
-                  />
-                </div>
-              </div>
-              <div className="flex justify-end mt-8">
-                <Button onClick={handleNext} data-testid="btn-next-step-1" className="bg-blue-600 hover:bg-blue-700 h-11 px-8">
-                  Next <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </div>
-            </div>
-          )}
+  <div className="max-w-md mx-auto bg-white rounded-3xl p-6 shadow-sm mt-4">
+
+    {/* Top icon (optional back button ke jagah) */}
+    <div className="w-14 h-14 rounded-2xl bg-blue-600/10 flex items-center justify-center mx-auto mb-4">
+      <div className="w-6 h-10 rounded-xl bg-blue-600"></div>
+    </div>
+
+    <h1 className="text-2xl font-semibold text-center">Welcome</h1>
+    <p className="text-gray-500 text-center text-sm mt-1">
+      Enter your details to continue
+    </p>
+
+    <div className="mt-6 space-y-5">
+
+      {/* Full Name */}
+      <div className="space-y-1">
+        <label className="text-gray-700 text-sm font-medium">Full Name</label>
+        <input
+          className="w-full h-12 rounded-xl border border-gray-300 px-4 text-gray-700 focus:ring-2 focus:ring-blue-600 outline-none"
+          placeholder="John Doe"
+          value={formData.name}
+          onChange={(e) => handleChange('name', e.target.value)}
+        />
+      </div>
+
+      {/* Phone Number */}
+      <div className="space-y-1">
+        <label className="text-gray-700 text-sm font-medium">Phone Number</label>
+
+        <div className="flex items-center w-full h-12 rounded-xl border border-gray-300 bg-white px-3">
+          <span className="text-gray-600 mr-2 font-medium">+91</span>
+          <input
+            className="flex-1 h-full outline-none text-gray-800"
+            type="tel"
+            placeholder="Enter 10 digit number"
+            value={formData.phone}
+            onChange={(e) => handleChange('phone', e.target.value)}
+          />
+        </div>
+      </div>
+
+      {/* Password */}
+      <div className="space-y-1">
+        <label className="text-gray-700 text-sm font-medium">Create Password</label>
+        <input
+          type="password"
+          placeholder="Minimum 6 characters"
+          className="w-full h-12 rounded-xl border border-gray-300 px-4 text-gray-700 focus:ring-2 focus:ring-blue-600 outline-none"
+          value={formData.password}
+          onChange={(e) => handleChange('password', e.target.value)}
+        />
+      </div>
+
+      {/* Confirm Password */}
+      <div className="space-y-1">
+        <label className="text-gray-700 text-sm font-medium">Confirm Password</label>
+        <input
+          type="password"
+          placeholder="Re-enter your password"
+          className="w-full h-12 rounded-xl border border-gray-300 px-4 text-gray-700 focus:ring-2 focus:ring-blue-600 outline-none"
+          value={formData.confirmPassword}
+          onChange={(e) => handleChange('confirmPassword', e.target.value)}
+        />
+      </div>
+
+      {/* (Optional) Terms line */}
+      <div className="flex items-start gap-2 mt-2">
+        <input type="checkbox" className="mt-1 w-5 h-5" />
+        <p className="text-gray-600 text-sm">
+          I accept the <span className="text-blue-600 font-medium">Terms & Conditions</span> and Privacy Policy.
+        </p>
+      </div>
+    </div>
+
+    <button
+      onClick={handleNext}
+      className="w-full h-12 mt-6 bg-blue-600 text-white font-medium rounded-xl shadow-sm active:scale-95 transition"
+      data-testid="btn-next-step-1"
+    >
+      Next
+    </button>
+
+  </div>
+)}
+
 
           {step === 2 && (
             <div data-testid="step-2">
