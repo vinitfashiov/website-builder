@@ -233,12 +233,12 @@ export default function LandingPage() {
             Trusted by 500+ businesses
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-testid="landing-title">
-            Build Your Dream Website
+            Build Your Website
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             Professional websites starting at just <span className="text-green-600 font-bold">₹9</span> advance booking.
             <br className="hidden sm:block" />
-            No hidden charges. Fast delivery. 100% satisfaction guaranteed.
+            No hidden charges. Fast delivery.
           </p>
         </div>
 
@@ -262,93 +262,77 @@ export default function LandingPage() {
           ))}
         </div>
 
-        <Card className="p-6 sm:p-8 shadow-xl max-w-4xl mx-auto">
+        <Card className="p-6 sm:p-8 max-w-5xl mx-auto rounded-3xl bg-white">
           {step === 1 && (
-  <div className="max-w-md mx-auto bg-white rounded-3xl p-6 shadow-sm mt-4">
-
-    {/* Top icon (optional back button ke jagah) */}
-    <div className="w-14 h-14 rounded-2xl bg-blue-600/10 flex items-center justify-center mx-auto mb-4">
-      <div className="w-6 h-10 rounded-xl bg-blue-600"></div>
-    </div>
-
-    <h1 className="text-2xl font-semibold text-center">Welcome</h1>
-    <p className="text-gray-500 text-center text-sm mt-1">
-      Enter your details to continue
-    </p>
-
-    <div className="mt-6 space-y-5">
-
-      {/* Full Name */}
-      <div className="space-y-1">
-        <label className="text-gray-700 text-sm font-medium">Full Name</label>
-        <input
-          className="w-full h-12 rounded-xl border border-gray-300 px-4 text-gray-700 focus:ring-2 focus:ring-blue-600 outline-none"
-          placeholder="John Doe"
-          value={formData.name}
-          onChange={(e) => handleChange('name', e.target.value)}
-        />
-      </div>
-
-      {/* Phone Number */}
-      <div className="space-y-1">
-        <label className="text-gray-700 text-sm font-medium">Phone Number</label>
-
-        <div className="flex items-center w-full h-12 rounded-xl border border-gray-300 bg-white px-3">
-          <span className="text-gray-600 mr-2 font-medium">+91</span>
-          <input
-            className="flex-1 h-full outline-none text-gray-800"
-            type="tel"
-            placeholder="Enter 10 digit number"
-            value={formData.phone}
-            onChange={(e) => handleChange('phone', e.target.value)}
-          />
-        </div>
-      </div>
-
-      {/* Password */}
-      <div className="space-y-1">
-        <label className="text-gray-700 text-sm font-medium">Create Password</label>
-        <input
-          type="password"
-          placeholder="Minimum 6 characters"
-          className="w-full h-12 rounded-xl border border-gray-300 px-4 text-gray-700 focus:ring-2 focus:ring-blue-600 outline-none"
-          value={formData.password}
-          onChange={(e) => handleChange('password', e.target.value)}
-        />
-      </div>
-
-      {/* Confirm Password */}
-      <div className="space-y-1">
-        <label className="text-gray-700 text-sm font-medium">Confirm Password</label>
-        <input
-          type="password"
-          placeholder="Re-enter your password"
-          className="w-full h-12 rounded-xl border border-gray-300 px-4 text-gray-700 focus:ring-2 focus:ring-blue-600 outline-none"
-          value={formData.confirmPassword}
-          onChange={(e) => handleChange('confirmPassword', e.target.value)}
-        />
-      </div>
-
-      {/* (Optional) Terms line */}
-      <div className="flex items-start gap-2 mt-2">
-        <input type="checkbox" className="mt-1 w-5 h-5" />
-        <p className="text-gray-600 text-sm">
-          I accept the <span className="text-blue-600 font-medium">Terms & Conditions</span> and Privacy Policy.
-        </p>
-      </div>
-    </div>
-
-    <button
-      onClick={handleNext}
-      className="w-full h-12 mt-6 bg-blue-600 text-white font-medium rounded-xl shadow-sm active:scale-95 transition"
-      data-testid="btn-next-step-1"
-    >
-      Next
-    </button>
-
-  </div>
-)}
-
+            <div data-testid="step-1">
+              <div className="mb-6">
+                <h2 className="text-2xl font-bold mb-2">Let&apos;s Get Started</h2>
+                <p className="text-gray-600 text-sm">Tell us about yourself</p>
+              </div>
+              <div className="space-y-5">
+                <div>
+                  <Label htmlFor="name" className="text-sm font-semibold">
+                    Full Name *
+                  </Label>
+                  <Input
+                    id="name"
+                    data-testid="input-name"
+                    value={formData.name}
+                    onChange={(e) => handleChange('name', e.target.value)}
+                    placeholder="John Doe"
+                    className="mt-1.5 h-11"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="phone" className="text-sm font-semibold">
+                    Phone Number *
+                  </Label>
+                  <Input
+                    id="phone"
+                    data-testid="input-phone"
+                    value={formData.phone}
+                    onChange={(e) => handleChange('phone', e.target.value)}
+                    placeholder="9876543210"
+                    type="tel"
+                    className="mt-1.5 h-11"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="password" className="text-sm font-semibold">
+                    Create Password *
+                  </Label>
+                  <Input
+                    id="password"
+                    data-testid="input-password"
+                    value={formData.password}
+                    onChange={(e) => handleChange('password', e.target.value)}
+                    placeholder="Minimum 6 characters"
+                    type="password"
+                    className="mt-1.5 h-11"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="confirmPassword" className="text-sm font-semibold">
+                    Confirm Password *
+                  </Label>
+                  <Input
+                    id="confirmPassword"
+                    data-testid="input-confirm-password"
+                    value={formData.confirmPassword}
+                    onChange={(e) => handleChange('confirmPassword', e.target.value)}
+                    placeholder="Re-enter your password"
+                    type="password"
+                    className="mt-1.5 h-11"
+                  />
+                </div>
+              </div>
+              <div className="flex justify-end mt-8">
+                <Button onClick={handleNext} data-testid="btn-next-step-1" className="bg-blue-600 hover:bg-blue-700 h-11 px-8">
+                  Next <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+          )}
 
           {step === 2 && (
             <div data-testid="step-2">
@@ -401,13 +385,16 @@ export default function LandingPage() {
             </div>
           )}
 
-          {step === 3 && (
+                    {step === 3 && (
             <div data-testid="step-3">
               <div className="mb-6">
                 <h2 className="text-2xl font-bold mb-2">Choose Your Perfect Plan</h2>
-                <p className="text-gray-600 text-sm">Select a plan that fits your needs. You can upgrade anytime!</p>
+                <p className="text-gray-600 text-sm">
+                  Pick a plan that fits your stage. You can upgrade anytime.
+                </p>
               </div>
 
+              {/* minimal, non-boxy plan cards */}
               <RadioGroup
                 value={formData.plan}
                 onValueChange={(value) => {
@@ -423,63 +410,87 @@ export default function LandingPage() {
                     const colors = planColorClasses[plan.color] ?? planColorClasses.blue;
 
                     return (
-                      <div
+                      <button
                         key={plan.name}
-                        className={`relative plan-card border-2 rounded-xl p-5 transition-all ${
-                          isSelected ? 'selected border-blue-600 shadow-lg' : 'border-gray-200 hover:border-blue-300 hover:shadow-md'
-                        }`}
+                        type="button"
                         onClick={() => {
                           handleChange('plan', plan.name);
                           handleChange('plan_price', plan.price);
                         }}
+                        className={[
+                          'group relative flex flex-col items-stretch text-left w-full cursor-pointer',
+                          'rounded-2xl border px-4 py-4 sm:px-5 sm:py-5 transition-all',
+                          isSelected
+                            ? 'border-blue-600 bg-blue-50/60 shadow-md shadow-blue-100'
+                            : 'border-gray-200 bg-white hover:border-blue-400 hover:bg-blue-50/40 hover:shadow-sm'
+                        ].join(' ')}
                         data-testid={`plan-${plan.name.toLowerCase().replace(/\s+/g, '-')}`}
                       >
                         {plan.popular && (
-                          <div className="absolute -top-3 right-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white text-xs px-3 py-1 rounded-full font-semibold shadow-md">
-                            MOST POPULAR
-                          </div>
+                          <span className="absolute -top-3 right-4 rounded-full bg-blue-600 text-white text-[10px] font-semibold px-3 py-1 shadow-sm">
+                            RECOMMENDED
+                          </span>
                         )}
-                        <div className="flex items-start justify-between mb-3">
+
+                        <div className="flex items-center justify-between mb-2">
                           <div className="flex items-center gap-3">
-                            <div className={`p-2 rounded-lg ${colors.bg}`}>
+                            <div className={`p-2 rounded-xl ${colors.bg}`}>
                               <Icon className={`w-5 h-5 ${colors.text}`} />
                             </div>
                             <div>
-                              <Label htmlFor={plan.name} className="font-bold text-base cursor-pointer">
-                                {plan.name}
-                              </Label>
+                              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                                {plan.name.replace('Website', '')}
+                              </p>
+                              <p className="text-sm text-gray-700">
+                                {plan.features[0]} · {plan.features[1]}
+                              </p>
                             </div>
                           </div>
-                          <RadioGroupItem value={plan.name} id={plan.name} className="mt-1" />
+
+                          <div className="text-right">
+                            <p className="text-2xl font-semibold text-gray-900 leading-tight">
+                              ₹{plan.price.toLocaleString()}
+                            </p>
+                            <p className="text-[11px] text-gray-500">one-time</p>
+                          </div>
                         </div>
-                        <div className="mb-4">
-                          <p className="text-3xl font-bold text-gray-900">₹{plan.price.toLocaleString()}</p>
-                          <p className="text-sm text-gray-500">One-time payment</p>
+
+                        <div className="mt-3 flex items-center justify-between">
+                          <p className="text-[11px] text-gray-500">
+                            Includes full website setup
+                          </p>
+                          <RadioGroupItem
+                            value={plan.name}
+                            id={plan.name}
+                            className="ml-2"
+                          />
                         </div>
-                        <ul className="space-y-2">
-                          {plan.features.map((feature) => (
-                            <li key={feature} className="flex items-start gap-2 text-sm">
-                              <Check className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-700">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                      </button>
                     );
                   })}
                 </div>
               </RadioGroup>
 
+              {/* compare button – full details neeche */}
               <Collapsible open={showComparison} onOpenChange={setShowComparison}>
                 <CollapsibleTrigger asChild>
-                  <Button variant="outline" className="w-full mb-6 h-11" data-testid="btn-toggle-comparison">
-                    <span className="mr-2">Compare Plans in Detail</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${showComparison ? 'rotate-180' : ''}`} />
+                  <Button
+                    variant="outline"
+                    className="w-full mb-5 h-11 text-sm font-medium"
+                    data-testid="btn-toggle-comparison"
+                  >
+                    <span className="mr-2">View full feature comparison</span>
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${showComparison ? 'rotate-180' : ''}`}
+                    />
                   </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <div className="overflow-x-auto mb-6 border rounded-lg">
-                    <table className="w-full text-sm" data-testid="plan-comparison-table">
+                  <div className="overflow-x-auto mb-5 border rounded-lg">
+                    <table
+                      className="w-full text-sm"
+                      data-testid="plan-comparison-table"
+                    >
                       <thead className="bg-gray-50">
                         <tr>
                           <th className="p-3 text-left font-semibold">Feature</th>
@@ -491,12 +502,25 @@ export default function LandingPage() {
                       </thead>
                       <tbody className="bg-white">
                         {planComparison.map((row) => (
-                          <tr key={row.feature} className="border-t hover:bg-gray-50">
-                            <td className="p-3 font-medium text-gray-700">{row.feature}</td>
-                            <td className="p-3 text-center text-gray-600">{row.starter}</td>
-                            <td className="p-3 text-center text-gray-600">{row.premium}</td>
-                            <td className="p-3 text-center text-gray-600">{row.advanced}</td>
-                            <td className="p-3 text-center text-gray-600">{row.pro}</td>
+                          <tr
+                            key={row.feature}
+                            className="border-t hover:bg-gray-50"
+                          >
+                            <td className="p-3 font-medium text-gray-700">
+                              {row.feature}
+                            </td>
+                            <td className="p-3 text-center text-gray-600">
+                              {row.starter}
+                            </td>
+                            <td className="p-3 text-center text-gray-600">
+                              {row.premium}
+                            </td>
+                            <td className="p-3 text-center text-gray-600">
+                              {row.advanced}
+                            </td>
+                            <td className="p-3 text-center text-gray-600">
+                              {row.pro}
+                            </td>
                           </tr>
                         ))}
                       </tbody>
@@ -505,59 +529,66 @@ export default function LandingPage() {
                 </CollapsibleContent>
               </Collapsible>
 
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <Shield className="w-5 h-5 text-green-600" />
-                  <p className="font-semibold text-green-800">100% Secure Payment</p>
+              {/* slim trust strip – big-trust but clean */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-3 mb-4">
+                <div className="flex items-center gap-2">
+                  <Shield className="w-5 h-5 text-emerald-600" />
+                  <div>
+                    <p className="text-sm font-semibold text-emerald-900">
+                      Bigbooster Secure Booking
+                    </p>
+                    <p className="text-xs text-emerald-800">
+                      Pay only <span className="font-semibold">₹9</span> now · pay the rest after you approve your live site.
+                    </p>
+                  </div>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-gray-700">
-                  <div className="flex items-center gap-1">
-                    <Check className="w-3 h-3 text-green-600" />
-                    SSL Encrypted
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Check className="w-3 h-3 text-green-600" />
-                    Money-back guarantee
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Check className="w-3 h-3 text-green-600" />
-                    No hidden fees
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Check className="w-3 h-3 text-green-600" />
-                    24/7 Support
-                  </div>
+                <div className="flex items-center gap-2 text-[11px] text-emerald-900/90">
+                  <span className="px-2 py-1 rounded-full bg-white border border-emerald-200">
+                    500+ websites delivered
+                  </span>
+                  <span className="hidden sm:inline px-2 py-1 rounded-full bg-white border border-emerald-200">
+                    ⭐ 4.9/5 avg rating
+                  </span>
                 </div>
               </div>
 
+              {/* best-in-class pay button – no flashy AI style, simple & pro */}
               <Button
                 onClick={handlePayment}
                 disabled={loading || !selectedPlan}
-                className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-6 text-base sm:text-lg shadow-lg hover:shadow-xl transition-all"
+                className="w-full h-12 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base shadow-sm hover:shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
                 data-testid="btn-pay-advance"
               >
                 {loading ? (
                   <span className="flex items-center justify-center gap-2">
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    Processing...
+                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    Processing payment…
                   </span>
                 ) : (
                   <span className="flex items-center justify-center gap-2">
                     <Shield className="w-5 h-5" />
-                    Secure Payment: Pay ₹9 to book your website slot
+                    Pay ₹9 &amp; start with {selectedPlan?.name || 'this plan'}
                   </span>
                 )}
               </Button>
 
-              <p className="text-center text-xs text-gray-500 mt-3">By proceeding, you agree to our Terms of Service and Privacy Policy</p>
+              <p className="text-center text-xs text-gray-500 mt-3">
+                By continuing, you agree to our Terms of Service &amp; Privacy Policy.
+              </p>
 
               <div className="flex justify-start mt-6">
-                <Button onClick={() => setStep(2)} variant="outline" data-testid="btn-back-step-3" className="h-11 px-6">
+                <Button
+                  onClick={() => setStep(2)}
+                  variant="outline"
+                  data-testid="btn-back-step-3"
+                  className="h-11 px-6"
+                >
                   <ArrowLeft className="mr-2 w-4 h-4" /> Back
                 </Button>
               </div>
             </div>
           )}
+
         </Card>
 
         <div className="text-center mt-6">
